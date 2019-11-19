@@ -1,8 +1,6 @@
 const connectionString = process.env.DATABASE_URL || 'postgres://wrohewbrwwkqcb:2a47f3cbc1bdf6d7bc104467b67660e689ff570b21a31e941aac5234a005258c@ec2-174-129-253-42.compute-1.amazonaws.com:5432/d7aodf9tme2c4q?ssl=true';
 
 
-
-const cool = require('cool-ascii-faces')
 const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
