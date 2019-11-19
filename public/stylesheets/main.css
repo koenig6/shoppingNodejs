@@ -1,0 +1,41 @@
+
+h1{
+    margin-top: 100px;
+    text-align: center;
+    color: blue;
+}
+
+div{
+    font-size: 20px;
+    display: block;
+    text-align: center;
+}
+
+form{
+   display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+input[type=submit] {
+    background-color: red;
+    color: ghostwhite;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #eee;
+    text-shadow: none;
+    height: 40px;
+    width: 185px;
+    font: bold 15px arial, sans-serif;
+}
+
+input[type=submit]:hover {
+     background-color: ghostwhite;
+     color: red;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #eee;
+    text-shadow: none;
+
+}

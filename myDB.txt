@@ -1,0 +1,21 @@
+CREATE TABLE person (
+	person_id	  		serial						PRIMARY KEY NOT NULL,
+	person_name 	varchar(500)
+);
+CREATE TABLE product (
+	product_id	  		serial						PRIMARY KEY NOT NULL,
+	product_name 	varchar(500)
+);
+CREATE TABLE store (
+	store_id	  		serial						PRIMARY KEY NOT NULL,
+	store_name 	varchar(500)
+);
+CREATE TABLE gift (
+	gift_id				serial					PRIMARY KEY NOT NULL,
+	price				money,
+	date_given			date,
+	note				varchar(500),
+	person_id			int						REFERENCES person,
+	product_id			int						REFERENCES product,
+	store_id			int						REFERENCES store
+);
