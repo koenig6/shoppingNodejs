@@ -1,4 +1,5 @@
-const connectionString = process.env.DATABASE_URL || 'postgres://wrohewbrwwkqcb:2a47f3cbc1bdf6d7bc104467b67660e689ff570b21a31e941aac5234a005258c@ec2-174-129-253-42.compute-1.amazonaws.com:5432/d7aodf9tme2c4q?ssl=true';
+require('dotenv').config();
+const connectionString = process.env.DATABASE_URL;
 
 
 const express = require('express')
@@ -9,7 +10,7 @@ const pool = new Pool(
     {
     //connectionString: process.env.DATABASE_URL,
     //ssl:true
-        const pool = new Pool({connectionString: connectionString});
+        connectionString: connectionString
     });
 
 
@@ -34,15 +35,16 @@ express()
                 }//end catch
         })*/
 
+    .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
         var sql = "SELECT * FROM store";
 
         pool.query(sql, function(err, result) {
             // If an error occurred...
             if (err) {
-                console.log("Error in query: ")
-                console.log(err);
-            }
+                        console.log("Error in query: ")
+                        console.log(err);
+                    }
 
             // Log this to the console for debugging purposes.
             console.log("Back from DB with result:");
@@ -52,4 +54,3 @@ express()
         });
 
 
-    .listen(PORT, () => console.log(`Listening on ${ PORT }`))
