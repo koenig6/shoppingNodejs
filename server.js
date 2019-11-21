@@ -68,4 +68,26 @@ function getShopping(req, res)
                        console.log('Back from the database with results: ', res);
 
                     });
+    var res = {store_id: 1, store_name: 'ross'};
+    res.json(res);
+}
+
+function getShoppingFromDb(store_id, callback)
+{
+    console.log("Inside getShoppingFromDb: ", store_id);
+
+    var sql = "SELECT store_id, store_name From store WHERE store_id = $1::int";
+
+    var params = [store_id];
+
+    pool.query(sql, params, function(err, res)
+              {
+        if(err){
+            console.log('Database error occured');
+            console.log(err);
+        }
+        console.log('found DB result: ' + JSON.stringify(res.rows));
+
+        callback(null, res.rows);
+    });
 }
