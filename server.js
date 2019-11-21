@@ -1,24 +1,21 @@
 require('dotenv').config();
 const connectionString = process.env.DATABASE_URL;
+const express = require('express');
+var app = express();
 
-
-const express = require('express')
-const path = require('path')
+const path = require('path');
 const PORT = process.env.PORT || 5000
 const { Pool } = require('pg');
 const pool = new Pool(
     {
-    //connectionString: process.env.DATABASE_URL,
-    //ssl:true
         connectionString: connectionString
     });
 
-
-express()
-    .use(express.static(path.join(__dirname, 'public')))
-    .set('views', path.join(__dirname, 'views'))
-    .set('view engine', 'ejs')
-    .get('/', (req, res) => res.render('pages/index'))
+    app.use(express.static(path.join(__dirname, 'public')))
+    app.set('views', path.join(__dirname, 'views'))
+    app.set('view engine', 'ejs')
+    app.get('/', (req, res) => res.render('pages/index'))
+    app.get('/getShopping', getShopping )
     /*.get('/db', async (req, res) =>
        {
             try{
@@ -35,7 +32,11 @@ express()
                 }//end catch
         })*/
 
-    .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+    app.listen(app.get('PORT'), function()
+               {
+                console.log('listening on port: ', app.get('PORT'));
+                });
+
 
         var sql = "SELECT * FROM store";
 
@@ -54,3 +55,17 @@ express()
         });
 
 
+function getShopping(req, res)
+{
+    console.log("Inside getShopping function");
+
+    var store_id = req.query.store_id;
+    console.log(" Retrieving store with id: ", store_id);
+
+
+    getShoppingFromDb(store_id, function(err, res)
+                      {
+                       console.log('Back from the database with results: ', res);
+
+                    });
+}
