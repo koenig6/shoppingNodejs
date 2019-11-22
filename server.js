@@ -46,6 +46,10 @@ const PORT = process.env.PORT || 5000
 function getShopping(req, res)
 {
     console.log('inside getShopping');
+
+
+    const params = {store_id: 1, store_name: 'ross'};
+    res.render('pages/shopping', params);
 }
 
 
