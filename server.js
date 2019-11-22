@@ -15,7 +15,7 @@ const pool = new Pool(
     app.set('views', path.join(__dirname, 'views'))
     app.set('view engine', 'ejs')
     app.get('/', (req, res) => res.render('pages/index'))
-    app.get('/shopping' (req, res) => res.render('pages/shopping'))
+    app.get('/shopping');
     /*.get('/db', async (req, res) =>
        {
             try{
