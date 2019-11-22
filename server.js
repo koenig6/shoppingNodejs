@@ -12,7 +12,7 @@ const pool = new Pool({connectionString: connectionString});
     app.use(express.static(path.join(__dirname, 'public')))
     app.set('PORT', (process.env.PORT || 5000));
     app.set('views', path.join(__dirname, 'views'))
-    app.set('view engine', 'ejs')
+    //app.set('view engine', 'ejs')
     app.get('/', (req, res) => res.render('pages/index'))
     app.get('/getShopping', getShopping);
 
