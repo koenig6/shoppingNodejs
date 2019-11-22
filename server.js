@@ -55,7 +55,7 @@ const pool = new Pool(
         });*/
 
 
-function getShopping(req, res)
+/*function getShopping(req, res)
 {
     console.log("Inside getShopping function");
 
@@ -88,4 +88,4 @@ function getShoppingFromDb(store_id, callback)
 
         callback(null, res.rows);
     });
-}
+}*/
