@@ -38,9 +38,9 @@ const pool = new Pool(
                 });
 
 
-        var sql = "SELECT * FROM store";
+        //var sql = "SELECT * FROM store";
 
-        pool.query(sql, function(err, result) {
+        /*pool.query(sql, function(err, result) {
             // If an error occurred...
             if (err) {
                         console.log("Error in query: ")
@@ -52,7 +52,7 @@ const pool = new Pool(
             console.log(result.rows);
 
 
-        });
+        });*/
 
 
 function getShopping(req, res)
@@ -66,10 +66,8 @@ function getShopping(req, res)
     getShoppingFromDb(store_id, function(err, res)
                       {
                        console.log('Back from the database with results: ', res);
-
+                        res.json(res);
                     });
-    var res = {store_id: 1, store_name: 'ross'};
-    res.json(res);
 }
 
 function getShoppingFromDb(store_id, callback)
