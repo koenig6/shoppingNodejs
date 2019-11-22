@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 5000
     app.set('views', path.join(__dirname, 'views'))
     app.set('view engine', 'ejs')
     app.get('/', (req, res) => res.render('pages/index'))
-    app.get('/shopping', getShopping);
+    app.get('/getShopping', getShopping);
 
     app.listen(app.get('PORT'), function()
                {
@@ -49,7 +49,7 @@ function getShopping(req, res)
 
 
     const params = {store_id: 1, store_name: 'ross'};
-    res.render('pages/shopping', params);
+    res.render('pages/getShopping', params);
 }
 
 
