@@ -2,17 +2,12 @@ require('dotenv').config();
 
 const express = require('express');
 var app = express();
-
+const path = require('path');
+const PORT = process.env.PORT || 5000
 const { Pool } = require('pg');
 
 const connectionString = process.env.DATABASE_URL;
 const pool = new Pool({connectionString: connectionString});
-
-
-const path = require('path');
-const PORT = process.env.PORT || 5000
-
-
 
     app.use(express.static(path.join(__dirname, 'public')))
     app.set('PORT', (process.env.PORT || 5000));
@@ -23,7 +18,7 @@ const PORT = process.env.PORT || 5000
 
     app.listen(app.get('PORT'), function()
                {
-                console.log('listening on port: ', app.get('PORT'));
+                console.log('listening on port:', PORT);
                 });
 
 
