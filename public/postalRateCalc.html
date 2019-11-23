@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="stylesheets/main.css">
+        <title>CS 313</title>
+    </head>
+    <body>
+    <h1> Postal Rate Calculator</h1>
+        <div>
+            <form action="/postalRateCalc" method="get">
+                  Weight of mail in oz:<br>
+                  <input type="text" name="weight">
+                  <br><br>
+                <label>Mail Type</label>
+                <select name="mailType">
+                      <option>Stamped</option>
+                      <option>Metered</option>
+                      <option>Flat</option>
+                      <option>Retail</option>
+                </select>
+                  <br><br>
+                  <input type="submit" class="button" value="Get Cost">
+            </form>
+        </div>
+    </body>
+</html>
