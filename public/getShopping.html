@@ -5,46 +5,89 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="stylesheets/main.css">
         <script src="shopping-clientside.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <title>CS 313</title>
     </head>
     <body>
-    <h1> Christmas Shopping Tracker</h1>
-        <div>
-            <!--<form id="form" action="/getShopping" method="get">-->
-            <!--<form id="form" method="get">-->
-                 Name:<br>
-                  <input type="text" name="name"><button onclick="searchByPerson()">Search By Person</button>
-                  <br><br>
-                 Product:<br>
-                  <input type="text" name="product">
-                <br><br>
-                <label>Store</label>
-                <select name="store">
-                      <option>"talbots"</option>
-                      <option>"target"</option>
-                      <option>"amazon"</option>
-                      <option>"walmart"</option>
-                      <option>"sears"</option>
-                      <option>"khols"</option>
-                      <option>"ethan allen"</option>
-                      <option>"wayfair"</option>
-                      <option>"dillards"</option>
-                      <option>"bloomingdales"</option>
-                      <option>"crate and barrel"</option>
-                      <option>"dsw"</option>
-                      <option>"nike"</option>
-                      <option>"laura ashley"</option>
-                      <option>"tj max"</option>
-                      <option>"fashion ten"</option>
-                      <option>"ross"</option>
-                </select>
-                  <br><br>
-                  <input type="submit" class="button" value="Get Cost">
-            <!-- </form>-->
+        <h1> Christmas Shopping Tracker</h1>
+            <div>
+                <!--<form id="form" action="/getShopping" method="get">-->
+                <!--<form id="form" method="get">-->
+                     Name:<br>
+                      <input type="text" name="name" id="name">
 
-            <div id="result"> </div>
-            <h2>Results</h2>
-            <ul id="ulPerson"></ul>
+                        <button onclick="searchByPerson()">Search By Person</button>
+                      <br><br>
+                     Product:<br>
+                      <input type="text" name="product" id="product">
+                    <br><br>
+                    <label>Store</label>
+                    <select name="store">
+                          <option>"talbots"</option>
+                          <option>"target"</option>
+                          <option>"amazon"</option>
+                          <option>"walmart"</option>
+                          <option>"sears"</option>
+                          <option>"khols"</option>
+                          <option>"ethan allen"</option>
+                          <option>"wayfair"</option>
+                          <option>"dillards"</option>
+                          <option>"bloomingdales"</option>
+                          <option>"crate and barrel"</option>
+                          <option>"dsw"</option>
+                          <option>"nike"</option>
+                          <option>"laura ashley"</option>
+                          <option>"tj max"</option>
+                          <option>"fashion ten"</option>
+                          <option>"ross"</option>
+                    </select>
+                      <br><br>
+                      <!--  <input type="submit" class="button" value="Get Cost">-->
+                <!-- </form>-->
+
+                <!-- <div id="result"> </div>-->
+                <h2>Results</h2>
+                <ul id="ulPerson"></ul>
+
+        </div>
+
+          <div class="snowflakes" aria-hidden="true">
+          <div class="snowflake">
+          ❅
+          </div>
+          <div class="snowflake">
+          ❆
+          </div>
+          <div class="snowflake">
+          ❅
+          </div>
+          <div class="snowflake">
+          ❆
+          </div>
+          <div class="snowflake">
+          ❅
+          </div>
+          <div class="snowflake">
+          ❆
+          </div>
+          <div class="snowflake">
+            ❅
+          </div>
+          <div class="snowflake">
+            ❆
+          </div>
+          <div class="snowflake">
+            ❅
+          </div>
+          <div class="snowflake">
+            ❆
+          </div>
+          <div class="snowflake">
+            ❅
+          </div>
+          <div class="snowflake">
+            ❆
+          </div>
         </div>
     </body>
 </html>

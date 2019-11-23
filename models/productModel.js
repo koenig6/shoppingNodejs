@@ -1,20 +1,39 @@
 //this file does all the database work
 
+const { Pool } = require("pg");
+const connectionString = process.env.DATABASE_URL;
+const pool = new Pool({connectionString: connectionString});
+
 function searchByProduct(productId, callback)
 {
-    var results = {id:id, name:name}
+    var results = {id:1, name:'name'}
     callback(null, results)
 
 }
 
-function searchByPerson(personId, callback)
+function searchByPerson(name, callback)
 {
-    var results = {list:
-                   [{id:1, name:'truck'},
-                   {id:2, name:'ball'},
-                   {id:3, name:'doll'}]};
+    console.log('searching the DB for person: ' + name);
 
-    callback(null, results)
+    var sql = 'SELECT person_id, person_name FROM person WHERE person_name=$1::text';
+
+    var params = [name];
+
+    pool.query(sql, params, function(err, db_results){
+        if(err)
+            {
+                throw err;
+            }
+        else
+            {
+                console.log('This is pool.query call back function');
+                console.log('db_results');
+
+                var results = {list:db_results.rows};
+
+                callback(null, results)
+            }
+    });
 }
 
 function getAllProduct(callback)

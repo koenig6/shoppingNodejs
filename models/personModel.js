@@ -1,5 +1,9 @@
 //this file does all the database work
 
+const { Pool } = require("pg");
+const connectionString = process.env.DATABASE_URL;
+const pool = new Pool({connectionString: connectionString});
+
 function getAllPeople(callback)
 {
     var results = {

@@ -5,15 +5,15 @@ const productModel = require('../models/productModel.js');
 function search(req, res)
 {
     //***ck if person or product id and call correct function
-    var personId; //from url query
-    productModel.searchByPerson(personId, function(results){
+    var name = req.query.name; //from url query
+    productModel.searchByPerson(name, function(error, results){
         res.json(results);
     });
 
     var productId;
-    productModel.searchByProduct(productId, function(results){
+   /* productModel.searchByProduct(productId, function(results){
         res.json(results);
-    });
+    });*/
 }
 
 function getProductList(req, res)
