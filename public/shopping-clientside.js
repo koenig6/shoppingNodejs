@@ -31,21 +31,14 @@ function addNewPerson()
     $.post('/person',{name: name}, function(data){
         console.log('Back: ');
         console.log(data);
+
         if(data)
             {
-               for(var i = 0; i < data.list.length; i++)
-            {
-                var person = data.list[i];
-                $('#ulPerson').append('<li>' + person.person_name + ' has been added' + '</li>');
+                $('#ulPerson').append('<li>' + name + ' has been added' + '</li>');
                 }
-            }
-
-
-
     });
-
-
 }
+
 
 function addNewProduct()
 {
