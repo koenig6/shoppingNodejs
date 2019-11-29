@@ -31,6 +31,13 @@ function addNewPerson()
     $.post('/person',{name: name}, function(data){
         console.log('Back: ');
         console.log(data);
+        if(data.list.length == 1)
+            {
+               var person = data.list[i];
+                $('#ulPerson').append('<li>' + person.person_name + ' has been added' +  '</li>');
+                }
+            }
+
     });
 
 
