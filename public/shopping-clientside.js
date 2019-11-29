@@ -51,9 +51,12 @@ function addNewProduct()
     $.post('/product',{name: name}, function(data){
         console.log('Back: ');
         console.log(data);
+
+        if(data)
+            {
+                $('#ulPerson').append('<li>' + name + ' has been added' + '</li>');
+                }
     });
-
-
 }
 
 
