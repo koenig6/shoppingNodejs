@@ -31,6 +31,7 @@ function addNewPerson()
     $.post('/person',{name: name}, function(data){
         console.log('Back: ');
         console.log(data);
+    });
 
 
 }
