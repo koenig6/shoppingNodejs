@@ -10,11 +10,18 @@ function searchByPerson()
         console.log('Back: ');
         console.log(data);
 
+        if(data)
+            {
         for(var i = 0; i < data.list.length; i++)
             {
                 var person = data.list[i];
                 $('#ulPerson').append('<li>' + person.person_name + '</li>');
                 }
+            }
+        else
+            {
+               $('#ulPerson').append('<li>' + name + ' is not found' '</li>');
+            }
 
 
     });
