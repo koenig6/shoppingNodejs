@@ -27,7 +27,6 @@ function getPersonById(id, callback)
 function insertNewPerson(name, callback)
 {
     console.log('Inside insertNewPerson function in personModel.js');
-    //var results = {success:true};
 
     var sql = 'INSERT INTO person (person_name) VALUES ($1::text)';
 
@@ -38,7 +37,7 @@ function insertNewPerson(name, callback)
                 throw err;
             }
         else{
-            console.log('Inserting into database' + name);
+            console.log('Inserting into database ' + name);
         }
     })
 

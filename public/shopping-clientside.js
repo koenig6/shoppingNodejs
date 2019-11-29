@@ -36,3 +36,20 @@ function addNewPerson()
 
 }
 
+function addNewProduct()
+{
+    console.log('Inside addNewProduct function..');
+
+    var name = $('#product').val();
+    console.log('Product: ' + product);
+
+    //person comes from the server.js page
+    $.post('/product',{name: name}, function(data){
+        console.log('Back: ');
+        console.log(data);
+    });
+
+
+}
+
+

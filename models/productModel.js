@@ -58,9 +58,22 @@ function getProductById(id, callback)
 
 function insertNewProduct(name, callback)
 {
-    var results = {success:true};
+    console.log('Inside insertNewProduct function in productModel.js');
 
-    callback(null, results);
+    var sql = 'INSERT INTO product (product_name) VALUES ($1::text)';
+
+    var params = [name];
+    pool.query(sql, params, function(err, db_insert){
+        if(err)
+            {
+                throw err;
+            }
+        else{
+            console.log('Inserting into database ' + name);
+        }
+    })
+
+    callback(null, sql);
 
 }
 

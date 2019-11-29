@@ -40,7 +40,7 @@ function postProduct(req, res)
 {
      var name = req.body.name;
 
-    console.log('Creating new product name' + name);
+    console.log('Creating new product ' + name);
 
     productModel.insertNewProduct(name, function(error, results){
         res.json(results);
