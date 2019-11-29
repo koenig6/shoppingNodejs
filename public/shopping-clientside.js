@@ -10,7 +10,7 @@ function searchByPerson()
         console.log('Back: ');
         console.log(data);
 
-        if(data)
+        if(data.list.length > 0)
             {
                 for(var i = 0; i < data.list.length; i++)
                 {
