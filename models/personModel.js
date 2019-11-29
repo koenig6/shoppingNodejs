@@ -32,7 +32,6 @@ function insertNewPerson(name, callback)
     var sql = 'INSERT INTO person (person_name) VALUES ($1::text)';
 
     //var params = [name];
-
     pool.query(sql, function(err, db_insert){
         if(err)
             {
