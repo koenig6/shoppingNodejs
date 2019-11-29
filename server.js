@@ -21,12 +21,14 @@ const pool = new Pool({connectionString: connectionString});
 
     app.get('/persons', personController.getPersonList);
     app.get('/person', personController.getPerson);
+    //post is for adding new person
     app.post('/person', personController.postPerson);
 
     app.get('/search', productController.search);
 
     app.get('/products', productController.getProductList);
     app.get('/product', productController.getProduct);
+    //post is for adding new products
     app.post('/product', productController.postProduct);
 
     app.listen(PORT, function(){console.log(`Listening on`, PORT);});
