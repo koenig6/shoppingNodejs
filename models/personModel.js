@@ -29,10 +29,10 @@ function insertNewPerson(name, callback)
     console.log('Inside insertNewPerson function in personModel.js');
     //var results = {success:true};
 
-    var sql = 'INSERT INTO person (person_name) VALUES ($1)';
+    var sql = 'INSERT INTO person (person_name) VALUES ($1::text)';
 
-    //var params = [name];
-    pool.query(sql, function(err, db_insert){
+    var params = [name];
+    pool.query(sql, params, function(err, db_insert){
         if(err)
             {
                 throw err;
