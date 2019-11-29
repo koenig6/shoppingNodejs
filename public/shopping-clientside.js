@@ -33,9 +33,15 @@ function addNewPerson()
         console.log(data);
         if(data)
             {
-               //var person = data.list[i];
-                $('#ulPerson').append('<li>' + person.person_name + ' has been added' +  '</li>');
+               for(var i = 0; i < data.list.length; i++)
+            {
+                var person = data.list[i];
+                $('#ulPerson').append('<li>' + person.person_name + ' has been added' + '</li>');
                 }
+            }
+
+
+
     });
 
 
