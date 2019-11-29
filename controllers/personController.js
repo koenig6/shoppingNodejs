@@ -26,7 +26,7 @@ function postPerson(req, res)
 {
     var name = req.body.name;
 
-    console.log('Creating new name' + name);
+    console.log('Creating new name ' + name);
 
     personModel.insertNewPerson(name, function(error, results){
         res.json(results);
