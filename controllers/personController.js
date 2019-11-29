@@ -24,7 +24,7 @@ function getPerson(req,res)
 
 function postPerson(req, res)
 {
-    var name = req.body.name;
+    var name = req.query.name;
 
     console.log('Creating new name' + name);
 
