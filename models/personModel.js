@@ -29,7 +29,7 @@ function insertNewPerson(name, callback)
     console.log('Inside insertNewPerson function in personModel.js');
     //var results = {success:true};
 
-    var sql = 'INSERT INTO person (person_name) VALUES (?)';
+    var sql = 'INSERT INTO person (person_name) VALUES ($1::text)';
 
     //var params = [name];
 
