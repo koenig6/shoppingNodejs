@@ -17,15 +17,15 @@
                       <input type="text" name="name" id="name">
 
                         <button onclick="searchByPerson()">Search By Person</button>
-                        <button onclick="addNewPerson()">Add New Person</button>
+                      <button visible=false onclick="addNewPerson()">Add New Person</button>
                       <br><br>
 
                      Product:<br>
                       <input type="text" name="product" id="product">
-                    <button onclick="addNewProduct()">Add New Product</button>
+
                     <br><br>
                     <label>Store</label>
-                    <select name="store">
+                    <select name="store" id="store">
                           <option>"talbots"</option>
                           <option>"target"</option>
                           <option>"amazon"</option>
@@ -45,6 +45,8 @@
                           <option>"ross"</option>
                     </select>
                       <br><br>
+
+                  <button onclick="addNewProduct()">Add Gift For Person</button>
                       <!--  <input type="submit" class="button" value="Get Cost">-->
                 <!-- </form>-->
 

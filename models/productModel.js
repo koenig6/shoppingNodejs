@@ -56,7 +56,7 @@ function getProductById(id, callback)
     callback(null, results);
 }
 
-function insertNewProduct(name, callback)
+function insertNewProduct(name, product, store, callback)
 {
     console.log('Inside insertNewProduct function in productModel.js');
 

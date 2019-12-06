@@ -49,11 +49,16 @@ function addNewProduct()
 {
     console.log('Inside addNewProduct function..');
 
-    var name = $('#product').val();
+    var product = $('#product').val();
+    var name = $('#name').val();
+    var store = $('#store').val();
+
     console.log('Product: ' + product);
+     console.log('Name: ' + name);
+     console.log('Store: ' + store);
 
     //person comes from the server.js page
-    $.post('/product',{name: name}, function(data){
+    $.post('/product',{name: name, product:product, store:store}, function(data){
         console.log('Back: ');
         console.log(data);
 

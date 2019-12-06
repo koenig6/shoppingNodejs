@@ -39,10 +39,12 @@ function getProduct(req, res)
 function postProduct(req, res)
 {
      var name = req.body.name;
+     var product = req.body.product;
+    var store = req.body.store;
 
-    console.log('Creating new product ' + name);
+    console.log('Creating new gift ' + name + " " + product + " " + store);
 
-    productModel.insertNewProduct(name, function(error, results){
+    productModel.insertNewProduct(name, product, store, function(error, results){
         res.json(results);
     });
 }
