@@ -60,19 +60,31 @@ function insertNewProduct(name, product, store, callback)
 {
     console.log('Inside insertNewProduct function in productModel.js');
 
-    var sql = 'INSERT INTO product (product_name) VALUES ($1::text)';
+    var sql = 'SELECT person_id FROM person WHERE person_name=$1::text';
 
     var params = [name];
-    pool.query(sql, params, function(err, db_insert){
+    var personResult;
+    console.log('Finding person.')
+    pool.query(sql, params, function(err, db_results){
         if(err)
             {
                 throw err;
             }
         else{
-            console.log('Inserting into database ' + name);
+            if(db_results)
+                {
+                    console.log('Found existing person.');
+                    personResult = {list:db_results.rows};
+
+                }
+            else
+                {
+                    console.log('Person does not exist.')
+                }
         }
     })
 
+    console.log(personResult);
     callback(null, sql);
 
 }
