@@ -1,8 +1,11 @@
 function searchByPerson()
 {
+    $('#ulPerson').empty();
+
     console.log('Searching for your person..');
 
-   var name = $('#name').val();
+    var name = $('#name').val();
+
    console.log('Name: ' + name);
 
     //search comes from the server.js page
@@ -12,10 +15,11 @@ function searchByPerson()
 
         if(data.list.length > 0)
             {
+                $('#ulPerson').append('<li>' + name + '</li>');
                 for(var i = 0; i < data.list.length; i++)
                 {
                 var person = data.list[i];
-                $('#ulPerson').append('<li>' + person.person_name + '</li>');
+                $('#ulPerson').append('<li>' + person.product_name + " " + person.store_name + '</li>');
                 }
             }
         else
@@ -47,6 +51,8 @@ function addNewPerson()
 
 function addNewProduct()
 {
+    $('#ulPerson').empty();
+
     console.log('Inside addNewProduct function..');
 
     var product = $('#product').val();
@@ -64,7 +70,7 @@ function addNewProduct()
 
         if(data)
             {
-                $('#ulPerson').append('<li>' + name + ' has been added' + '</li>');
+                $('#ulPerson').append('<li>' + name + '\'s gift has been added' + '</li>');
                 }
     });
 }

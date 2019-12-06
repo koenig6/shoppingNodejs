@@ -4,10 +4,15 @@ const productModel = require('../models/productModel.js');
 
 function search(req, res)
 {
+    console.log('You are inside search function');
     //***ck if person or product id and call correct function
-    var name = req.query.name; //from url query
+    var name = req.query.name;//from url query
+    console.log('This is the req.body.name variable ' + name);
+
     productModel.searchByPerson(name, function(error, results){
+        console.log('inside search in productController ' + name);
         res.json(results);
+        console.log(results);
     });
 
     var productId;

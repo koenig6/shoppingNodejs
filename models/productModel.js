@@ -15,7 +15,7 @@ function searchByPerson(name, callback)
 {
     console.log('searching the DB for person: ' + name);
 
-    var sql = 'SELECT person_id, person_name FROM person WHERE person_name=$1::text';
+    var sql = 'Select product.product_name, store.store_name From gift Inner Join person on gift.person_id=person.person_id Inner Join product on gift.product_id=product.product_id Inner Join store on gift.store_id=store.store_id Where person.person_name=$1::text';
 
     var params = [name];
 
@@ -60,18 +60,20 @@ function insertNewProduct(name, product, store, callback)
 {
     console.log('Inside insertNewProduct function in productModel.js');
 
-    var sql = 'SELECT person_id FROM person WHERE person_name=$1::text';
+    var sql = 'call insertgift($1::text, $2::text, $3::text)';
 
-    var params = [name];
+    var params = [name,product,store];
     var personResult;
-    console.log('Finding person.')
+    console.log('calling insertgift.')
     pool.query(sql, params, function(err, db_results){
         if(err)
             {
-                throw err;
+                console.log(err);
             }
         else{
-            if(db_results)
+
+            console.log('Done.')
+            /*if(db_results)
                 {
                     console.log('Found existing person.');
                     personResult = {list:db_results.rows};
@@ -80,10 +82,11 @@ function insertNewProduct(name, product, store, callback)
             else
                 {
                     console.log('Person does not exist.')
-                }
+                }*/
         }
     })
 
+    console.log('Output person found.')
     console.log(personResult);
     callback(null, sql);
 

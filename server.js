@@ -50,7 +50,8 @@ function getShopping(req, res)
      });
 }
 
-function  getPersonFromDB(name, callback){
+function  getPersonFromDB(name, callback)
+{
       console.log('getPersonFromDB called with name:', name);
 
     var sql = "SELECT person_name FROM person WHERE person_name = $1 ";
